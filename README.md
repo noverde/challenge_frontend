@@ -11,7 +11,7 @@ O usuário começará informando o CPF. A aplicação não pode deixar o u
 > Bônus (opcional): Implementar validação de CPF.
 
 ## Passo 2 - Valor do Empréstimo
-Ao informar o valor, a aplicação deverá tratar possíveis erros, como não aceitar caracteres alfanuméricos (apenas decimais). O botão de “Próximo” deverá ficar bloqueado caso o campo esteja em branco, do mesmo modo que a tela anterior.
+Ao informar o valor, a aplicação deverá tratar possíveis erros, como não aceitar caracteres alfanuméricos (apenas decimais). O botão de "Próximo" deverá ficar bloqueado caso o campo esteja em branco, do mesmo modo que a tela anterior.
 
 > Bônus (opcional): O valor de empréstimo deve ficar entre R$500 e R$4000.
 
@@ -29,33 +29,36 @@ A requisição precisa enviar um JSON com a seguinte estrutura:
 
 ```json
 {
-    “amount”: 9999.99,    // valor solicitado pelo usuário em decimal
-    “cpf”: “99999999999”,  // cpf informado pelo usuário (somente números) 
- }
+  "amount": 9999.99,
+  "cpf": "99999999999"
+}
 ```
+
+- **amount:** Valor solicitado pelo usuário em decimal;
+- **cpf:** CPF informado pelo usuário (somente números);
 
 ### API - Retorno
 A API irá retornar o JSON especificado abaixo:
 ```json
 {
-  “status”: “approved”,
-   “amount”: 2000.00,
-   “period”: 12,
-   “installment”: 200.30,
-   “first_due_date”: “2018-10-20” 
+  "status": "approved",
+  "amount": 2000.00,
+  "period": 12,
+  "installment": 200.30,
+  "first_due_date": "2018-10-20"
 }
 ```
 
-- **status:** Poderá ser “approved” ou “denied” (aprovado ou negado);
+- **status:** Poderá ser "approved" ou "denied" (aprovado ou negado);
 - **amount:** O valor total do empréstimo aprovado;
 - **period:** A quantidade de parcelas a pagar;
 - **installment:** O valor da parcela;
 - **first_due_date:** A data de vencimento da primeira parcela;
 
 ### Fluxo do Resultado
-- Caso a API retorne com status “approved” e o campo amount SEJA IGUAL ao valor solicitado pelo usuário, você deverá exibir os detalhes do empréstimo.
-- Caso a API retorne com status “approved” e o campo amount SEJA MENOR que o valor solicitado pelo usuário, você deverá exibir os detalhes do empréstimo e colocar uma observação conforme layout desktop4 e mobile4 (presentes na pasta `images`).
-- Caso a API retorne com status “denied”, você deve exibir os detalhes do layout5 (desktop5 e mobile5).
+- Caso a API retorne com status "approved" e o campo amount SEJA IGUAL ao valor solicitado pelo usuário, você deverá exibir os detalhes do empréstimo.
+- Caso a API retorne com status "approved" e o campo amount SEJA MENOR que o valor solicitado pelo usuário, você deverá exibir os detalhes do empréstimo e colocar uma observação conforme layout desktop4 e mobile4 (presentes na pasta `images`).
+- Caso a API retorne com status "denied", você deve exibir os detalhes do layout5 (desktop5 e mobile5).
 
 > **Dicas para testar:** 
 > - CPFs com final maior que 6 são negados;

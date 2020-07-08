@@ -67,7 +67,10 @@ A API irá retornar o JSON especificado abaixo:
 > - Propostas com valor maior que R$4000 são calculadas sobre R$4000;
 > - Propostas com valor final menor que R$500 são negadas;
 
-### Execução e entrega
+## Passo 4 - Persistência do resultado (Bônus)
+Uma vez confirmada a aprovação, o webapp deve persistir o resultado da solicitação sem chamar o backend novamente.
+
+## Execução e entrega
 Você deve enviar o código em um repositório GIT de sua preferência. Você precisa incluir um arquivo README explicando como devemos fazer para executar o seu código.
 
 ### O que será avaliado?

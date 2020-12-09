@@ -21,7 +21,7 @@ solicitação de crédito que se encontra na seguinte URL:  `https://api.nove
 
 ### API - Requisição
 
-Você deverá passar um token HTTP de autenticação na requisição: `Authentication: Bearer yourcustomtoken`
+Você deverá passar um token HTTP de autenticação na requisição: `Authorization: Bearer yourcustomtoken`
 
 > O Token será enviado por email e possui uso exclusivo para o desenvolvimento desse desafio por você.
 
